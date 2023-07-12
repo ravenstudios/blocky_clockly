@@ -1,13 +1,13 @@
 from constants import *
 import pygame
-
-
+import clocky
 
 clock = pygame.time.Clock()
 surface = pygame.display.set_mode((GAME_WIDTH, GAME_HEIGHT))
 
 pygame.init()
 
+clocky = clocky.Clocky()
 
 def main():
     running = True
@@ -32,14 +32,15 @@ def main():
 
 
 def draw():
-    surface.fill((0, 0, 0))#background
+    surface.fill((200, 200, 200))#background
+    clocky.draw(surface)
+
     pygame.display.flip()
 
 
 
 def update():
-    pass
-
+    clocky.update()
 
 
 if __name__ == "__main__":
